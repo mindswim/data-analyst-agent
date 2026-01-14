@@ -42,6 +42,7 @@ Thumbs.db
 
 # Chainlit
 .files/
+.playwright-mcp/
 
 # Jupyter
 .ipynb_checkpoints/

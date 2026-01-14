@@ -208,17 +208,14 @@ async def chat_profiles():
         cl.ChatProfile(
             name="Deep Analysis",
             markdown_description="Comprehensive analysis with charts and detailed recommendations",
-            icon="https://api.iconify.design/carbon:analytics.svg",
         ),
         cl.ChatProfile(
             name="Quick Insights",
             markdown_description="Fast, direct answers with key metrics",
-            icon="https://api.iconify.design/carbon:flash.svg",
         ),
         cl.ChatProfile(
             name="Executive Summary",
             markdown_description="Bottom-line findings for decision makers",
-            icon="https://api.iconify.design/carbon:report.svg",
         ),
     ]
 
@@ -230,22 +227,18 @@ async def starters():
         cl.Starter(
             label="Best CPA campaign",
             message="Which campaign has the best cost per acquisition? Show me the top performers.",
-            icon="https://api.iconify.design/carbon:trophy.svg",
         ),
         cl.Starter(
             label="Channel comparison",
             message="How does performance vary across channels? Compare CTR, conversion rate, and CPA.",
-            icon="https://api.iconify.design/carbon:compare.svg",
         ),
         cl.Starter(
             label="Trend analysis",
             message="What trends do you see over time? Are there any patterns or anomalies?",
-            icon="https://api.iconify.design/carbon:chart-line.svg",
         ),
         cl.Starter(
             label="Budget optimization",
             message="Where should we reallocate budget for maximum impact? Quantify the opportunity.",
-            icon="https://api.iconify.design/carbon:currency-dollar.svg",
         ),
     ]
 
@@ -277,24 +270,6 @@ async def start():
     cl.user_session.set("prompt_key", prompt_key)
     cl.user_session.set("data_file", DEFAULT_DATA_FILE)
     cl.user_session.set("messages", [])
-
-    # Show data preview
-    preview = get_data_preview(DEFAULT_DATA_FILE)
-
-    mode_descriptions = {
-        "deep": "comprehensive analysis with visualizations",
-        "quick": "fast, direct answers",
-        "executive": "bottom-line summaries",
-    }
-
-    actions = [
-        cl.Action(name="reset_data", payload={}, label="Reset to Default Data"),
-    ]
-
-    await cl.Message(
-        content=f"**{chat_profile or 'Deep Analysis'}** mode - {mode_descriptions.get(prompt_key, 'analysis')}\n\n{preview}\n\n---\nAsk a question or drag & drop a CSV file to analyze your own data.",
-        actions=actions
-    ).send()
 
 
 @cl.on_message

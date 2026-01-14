@@ -2,6 +2,8 @@
 
 A CodeAct demonstration for marketing data analysis.
 
+![Screenshot](public/screenshot.png)
+
 ## What is CodeAct?
 
 CodeAct is a pattern where LLMs generate and execute code rather than producing text responses directly. For data analysis, this means:

@@ -1,57 +1,39 @@
-/* Marketing Analyst - Professional Theme */
+/* Marketing Analyst - Theme */
 
-:root {
-  /* Primary accent - professional teal */
-  --accent-color: #0d9488;
-  --accent-color-light: #14b8a6;
-  --accent-color-dark: #0f766e;
+/* Hide default Chainlit branding */
+img[src*="chainlit"],
+img[alt*="logo"],
+[class*="watermark"] {
+  display: none !important;
+}
 
-  /* Background tones */
+/* Dark mode colors */
+[data-theme="dark"] {
+  --accent: #0d9488;
+  --accent-light: #14b8a6;
+  --accent-dark: #0f766e;
   --bg-primary: #0f1419;
   --bg-secondary: #16202a;
   --bg-tertiary: #1e2a36;
-
-  /* Text */
   --text-primary: #e7e9ea;
   --text-secondary: #8b98a5;
-  --text-muted: #6b7280;
-
-  /* Borders */
-  --border-color: #2f3b47;
-  --border-color-light: #3d4f5f;
+  --border: #2f3b47;
 }
 
-/* Base dark theme refinements */
-body {
-  background-color: var(--bg-primary);
+/* Light mode colors */
+[data-theme="light"] {
+  --accent: #0d9488;
+  --accent-light: #0f766e;
+  --accent-dark: #115e59;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #f1f5f9;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --border: #e2e8f0;
 }
 
-/* Chat container */
-.cl-chat-container {
-  background-color: var(--bg-primary);
-}
-
-/* Message bubbles */
-.cl-message {
-  border-radius: 12px;
-}
-
-.cl-message-content {
-  line-height: 1.6;
-}
-
-/* User messages */
-.cl-user-message {
-  background-color: var(--accent-color-dark);
-}
-
-/* Assistant messages */
-.cl-assistant-message {
-  background-color: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-}
-
-/* Code blocks - critical for data analysis demo */
+/* Code blocks */
 pre, code {
   font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', Consolas, monospace;
   font-size: 13px;
@@ -59,7 +41,7 @@ pre, code {
 
 pre {
   background-color: var(--bg-tertiary);
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--border);
   border-radius: 8px;
   padding: 16px;
   overflow-x: auto;
@@ -71,7 +53,7 @@ code {
   border-radius: 4px;
 }
 
-/* Tables - markdown tables from pandas output */
+/* Tables */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -81,174 +63,53 @@ table {
 
 th {
   background-color: var(--bg-tertiary);
-  color: var(--accent-color-light);
+  color: var(--accent);
   font-weight: 600;
   text-align: left;
   padding: 12px;
-  border-bottom: 2px solid var(--accent-color-dark);
+  border-bottom: 2px solid var(--accent-dark);
 }
 
 td {
   padding: 10px 12px;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border);
 }
 
 tr:hover td {
   background-color: var(--bg-secondary);
 }
 
-/* Tool steps - show analysis process */
+/* Tool steps */
 .cl-step {
-  background-color: var(--bg-secondary);
-  border-left: 3px solid var(--accent-color);
-  border-radius: 0 8px 8px 0;
-  margin: 8px 0;
+  border-left: 3px solid var(--accent);
 }
 
-.cl-step-header {
-  color: var(--accent-color-light);
-  font-weight: 500;
-}
-
-/* Charts and images */
-.cl-image {
-  border-radius: 8px;
-  border: 1px solid var(--border-color);
-  margin: 12px 0;
-}
-
-/* Starter questions */
+/* Starters */
 .cl-starter {
-  background-color: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  border-radius: 10px;
   transition: all 0.2s ease;
 }
 
 .cl-starter:hover {
-  border-color: var(--accent-color);
-  background-color: var(--bg-tertiary);
   transform: translateY(-2px);
 }
 
-/* Chat profiles selector */
-.cl-chat-profile {
-  background-color: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-}
-
-.cl-chat-profile:hover {
-  border-color: var(--accent-color);
-}
-
-.cl-chat-profile-active {
-  border-color: var(--accent-color);
-  background-color: var(--bg-tertiary);
-}
-
-/* Settings panel */
-.cl-settings {
-  background-color: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
-}
-
-/* Input area */
-.cl-input-container {
-  background-color: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
-}
-
+/* Input focus */
 .cl-input-container:focus-within {
-  border-color: var(--accent-color);
+  border-color: var(--accent);
   box-shadow: 0 0 0 2px rgba(13, 148, 136, 0.2);
 }
 
-/* Action buttons */
-.cl-action-button {
-  background-color: var(--bg-tertiary);
-  border: 1px solid var(--border-color);
-  border-radius: 6px;
-  color: var(--text-primary);
-  transition: all 0.15s ease;
-}
-
-.cl-action-button:hover {
-  background-color: var(--accent-color-dark);
-  border-color: var(--accent-color);
-}
-
-/* Scrollbar styling */
-::-webkit-scrollbar {
+/* Scrollbar - dark mode only */
+[data-theme="dark"] ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
-::-webkit-scrollbar-track {
+[data-theme="dark"] ::-webkit-scrollbar-track {
   background: var(--bg-primary);
 }
 
-::-webkit-scrollbar-thumb {
-  background: var(--border-color);
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: var(--border);
   border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--border-color-light);
-}
-
-/* Loading animation */
-.cl-loading {
-  color: var(--accent-color-light);
-}
-
-/* Welcome screen (chainlit.md) */
-.cl-welcome {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 40px 20px;
-}
-
-.cl-welcome h1 {
-  color: var(--text-primary);
-  font-weight: 600;
-  margin-bottom: 16px;
-}
-
-.cl-welcome h2 {
-  color: var(--accent-color-light);
-  font-size: 18px;
-  font-weight: 500;
-  margin-top: 24px;
-}
-
-.cl-welcome p {
-  color: var(--text-secondary);
-  line-height: 1.7;
-}
-
-.cl-welcome ul {
-  color: var(--text-secondary);
-}
-
-.cl-welcome li {
-  margin: 8px 0;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  pre {
-    font-size: 12px;
-    padding: 12px;
-  }
-
-  table {
-    font-size: 12px;
-  }
-
-  th, td {
-    padding: 8px;
-  }
 }
