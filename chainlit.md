@@ -1,14 +1,36 @@
-# Welcome to Chainlit! 🚀🤖
+# Marketing Analyst
 
-Hi there, Developer! 👋 We're excited to have you on board. Chainlit is a powerful tool designed to help you prototype, debug and share applications built on top of LLMs.
+An AI-powered data analyst that executes Python code to answer questions about your marketing campaigns.
 
-## Useful Links 🔗
+## Available Data
 
-- **Documentation:** Get started with our comprehensive [Chainlit Documentation](https://docs.chainlit.io) 📚
-- **Discord Community:** Join our friendly [Chainlit Discord](https://discord.gg/k73SQ3FyUh) to ask questions, share your projects, and connect with other developers! 💬
+The default dataset contains **marketing campaign performance** from January-February 2024:
 
-We can't wait to see what you create with Chainlit! Happy coding! 💻😊
+| Column | Description |
+|--------|-------------|
+| campaign_name | Campaign identifier (e.g., "Brand Awareness", "Retargeting") |
+| channel | Ad platform (Facebook, LinkedIn, Google Search, Instagram) |
+| audience_segment | Target audience (broad, retargeting, decision_makers, etc.) |
+| date | Weekly aggregation date |
+| impressions | Number of ad views |
+| clicks | Number of clicks |
+| conversions | Number of completed actions |
+| spend | Budget spent in USD |
 
-## Welcome screen
+## What You Can Ask
 
-To modify the welcome screen, edit the `chainlit.md` file at the root of your project. If you do not want a welcome screen, just leave this file empty.
+- **Performance metrics**: CTR, conversion rate, CPA, ROAS
+- **Comparisons**: Across channels, campaigns, or time periods
+- **Trends**: Week-over-week changes, patterns
+- **Recommendations**: Budget allocation, optimization opportunities
+
+## How It Works
+
+1. You ask a question about the data
+2. The agent writes and executes Python code (pandas, matplotlib)
+3. Results are grounded in actual computed metrics
+4. Charts and tables are generated as needed
+
+---
+
+*Select a starter question below or type your own.*

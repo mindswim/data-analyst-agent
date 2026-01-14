@@ -1,0 +1,254 @@
+/* Marketing Analyst - Professional Theme */
+
+:root {
+  /* Primary accent - professional teal */
+  --accent-color: #0d9488;
+  --accent-color-light: #14b8a6;
+  --accent-color-dark: #0f766e;
+
+  /* Background tones */
+  --bg-primary: #0f1419;
+  --bg-secondary: #16202a;
+  --bg-tertiary: #1e2a36;
+
+  /* Text */
+  --text-primary: #e7e9ea;
+  --text-secondary: #8b98a5;
+  --text-muted: #6b7280;
+
+  /* Borders */
+  --border-color: #2f3b47;
+  --border-color-light: #3d4f5f;
+}
+
+/* Base dark theme refinements */
+body {
+  background-color: var(--bg-primary);
+}
+
+/* Chat container */
+.cl-chat-container {
+  background-color: var(--bg-primary);
+}
+
+/* Message bubbles */
+.cl-message {
+  border-radius: 12px;
+}
+
+.cl-message-content {
+  line-height: 1.6;
+}
+
+/* User messages */
+.cl-user-message {
+  background-color: var(--accent-color-dark);
+}
+
+/* Assistant messages */
+.cl-assistant-message {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+}
+
+/* Code blocks - critical for data analysis demo */
+pre, code {
+  font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', Consolas, monospace;
+  font-size: 13px;
+}
+
+pre {
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 16px;
+  overflow-x: auto;
+}
+
+code {
+  background-color: var(--bg-tertiary);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* Tables - markdown tables from pandas output */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 14px;
+}
+
+th {
+  background-color: var(--bg-tertiary);
+  color: var(--accent-color-light);
+  font-weight: 600;
+  text-align: left;
+  padding: 12px;
+  border-bottom: 2px solid var(--accent-color-dark);
+}
+
+td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+tr:hover td {
+  background-color: var(--bg-secondary);
+}
+
+/* Tool steps - show analysis process */
+.cl-step {
+  background-color: var(--bg-secondary);
+  border-left: 3px solid var(--accent-color);
+  border-radius: 0 8px 8px 0;
+  margin: 8px 0;
+}
+
+.cl-step-header {
+  color: var(--accent-color-light);
+  font-weight: 500;
+}
+
+/* Charts and images */
+.cl-image {
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  margin: 12px 0;
+}
+
+/* Starter questions */
+.cl-starter {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.cl-starter:hover {
+  border-color: var(--accent-color);
+  background-color: var(--bg-tertiary);
+  transform: translateY(-2px);
+}
+
+/* Chat profiles selector */
+.cl-chat-profile {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+
+.cl-chat-profile:hover {
+  border-color: var(--accent-color);
+}
+
+.cl-chat-profile-active {
+  border-color: var(--accent-color);
+  background-color: var(--bg-tertiary);
+}
+
+/* Settings panel */
+.cl-settings {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+}
+
+/* Input area */
+.cl-input-container {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+}
+
+.cl-input-container:focus-within {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px rgba(13, 148, 136, 0.2);
+}
+
+/* Action buttons */
+.cl-action-button {
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--text-primary);
+  transition: all 0.15s ease;
+}
+
+.cl-action-button:hover {
+  background-color: var(--accent-color-dark);
+  border-color: var(--accent-color);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-color-light);
+}
+
+/* Loading animation */
+.cl-loading {
+  color: var(--accent-color-light);
+}
+
+/* Welcome screen (chainlit.md) */
+.cl-welcome {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.cl-welcome h1 {
+  color: var(--text-primary);
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.cl-welcome h2 {
+  color: var(--accent-color-light);
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 24px;
+}
+
+.cl-welcome p {
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.cl-welcome ul {
+  color: var(--text-secondary);
+}
+
+.cl-welcome li {
+  margin: 8px 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  pre {
+    font-size: 12px;
+    padding: 12px;
+  }
+
+  table {
+    font-size: 12px;
+  }
+
+  th, td {
+    padding: 8px;
+  }
+}

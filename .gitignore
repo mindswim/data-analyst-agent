@@ -41,7 +41,6 @@ env/
 Thumbs.db
 
 # Chainlit
-.chainlit/
 .files/
 
 # Jupyter
